@@ -646,6 +646,9 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
     Curve curve = Curves.linear,
     required List<double> opacityAnimationWeights,
   }) async {
+    // A scroll deferred to the next frame can find the list disposed or its
+    // controller detached.
+    if (!mounted || !primary.scrollController.hasClients) return;
     final direction = index > primary.target ? 1 : -1;
     final itemPosition = primary.itemPositionsNotifier.itemPositions.value
         .firstWhereOrNull(

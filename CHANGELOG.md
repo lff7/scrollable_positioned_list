@@ -1,3 +1,6 @@
+# 0.4.1
+* Fix `scrollTo` throwing and never completing when deferred past the list's disposal
+
 # 0.4.0
 * Remove non scrollable_positioned_list code
 * Add thumbVisibility parameter @kihyun1998 (https://github.com/google/flutter.widgets/pull/557)
